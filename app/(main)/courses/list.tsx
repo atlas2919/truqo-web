@@ -20,7 +20,7 @@ export const List = ({ courses, activeCourseId }: Props) => {
         if(pending) return;
         
         if(id === activeCourseId) {
-            return router.push("/learn");
+            return router.push("/guia");
         }
 
         startTransition(() => {

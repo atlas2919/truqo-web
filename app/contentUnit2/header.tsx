@@ -12,13 +12,8 @@ export const HeaderContent = () => {
             <div className="lg:max-w-screen-lg mx-auto flex items-center justify-between h-full">
                 <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
                     <Link href="/">
-                        <Image src="/mascot.svg" height={60} width={60} alt="Mascot" />
+                        <Image src="/mascot.svg" height={150} width={150} alt="Mascot" />
                     </Link>
-                    <h1 className="text-2xl font-extrabold text-green-600 tracking-wide">
-                        <Link href="/guia">
-                            Truqo
-                        </Link>
-                    </h1>
                 </div>
                 <ClerkLoading>
                     <Loader className="h-5 w-5 texxt-muted-foreground animate-spin" />

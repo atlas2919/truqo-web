@@ -23,8 +23,8 @@ export default function Home() {
             <SignedOut>
               <SignUpButton
                 mode="modal"
-                afterSignInUrl = "/guia"
-                afterSignUpUrl = "/guia"
+                afterSignInUrl = "/courses"
+                afterSignUpUrl = "/courses"
               >
                 <Button size = "lg" variant="secondary" className="w-full">
                   Get started
@@ -33,8 +33,8 @@ export default function Home() {
 
               <SignInButton
                 mode="modal"
-                afterSignInUrl = "/guia"
-                afterSignUpUrl = "/guia"
+                afterSignInUrl = "/courses"
+                afterSignUpUrl = "/courses"
               >
                 <Button size = "lg" variant="primaryOutline" className="w-full">
                   I already have an account
@@ -43,7 +43,7 @@ export default function Home() {
             </SignedOut>
             <SignedIn>
               <Button size="lg" variant="secondary" className="w-full" asChild>
-                <Link href="/guia">
+                <Link href="/courses">
                   Continue Learning
                 </Link>
               </Button>

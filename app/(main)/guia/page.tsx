@@ -5,13 +5,14 @@ import { StickyWrapper } from "@/components/sticky-wrapper";
 import { Progress } from "@/components/ui/progress";
 import { UserProgress } from "@/components/user-progress";
 import { quests } from "@/constants";
-import { getUserProgress, getUserSubscription } from "@/db/queries";
+import { getCourseProgress, getUserProgress, getUserSubscription } from "@/db/queries";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FaCheckCircle } from "react-icons/fa";
 import { UnitBannerGuide } from "./unit-banner";
 import { Button } from "@/components/ui/button";
+import { Header } from "./header";
 
 
 const PaginaGuia = async () => {
@@ -28,6 +29,11 @@ const PaginaGuia = async () => {
     ]);
 
     if (!userProgress || !userProgress.activeCourse) {
+        redirect("/courses");
+    }
+
+    if(!getCourseProgress) {
+
         redirect("/courses");
     }
 
@@ -95,6 +101,7 @@ const PaginaGuia = async () => {
             </StickyWrapper>
             
             <FeedWrapper>
+                <Header title={userProgress.activeCourse.title} />
                 <div className="w-full flex flex-col items-center">
                     <Image
                         src="/guia.svg"
