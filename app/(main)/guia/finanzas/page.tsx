@@ -10,12 +10,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FaCheckCircle } from "react-icons/fa";
-import { UnitBannerGuide } from "./unit-banner";
+import { UnitBannerGuide } from "./unit-banner-finanzas";
 import { Button } from "@/components/ui/button";
-import { Header } from "./header";
+import { Header } from "./header-finanzas";
 
 
-const PaginaGuia = async () => {
+const PaginaGuiaFinanzas = async () => {
 
     const UserProgressData = getUserProgress();
     const userSubscriptionData = getUserSubscription();
@@ -117,7 +117,7 @@ const PaginaGuia = async () => {
                     <div className="w-full mb-6">
                         <UnitBannerGuide 
                             title="Unit 1" 
-                            description="Introduccion de agricultura sostenible"
+                            description="Finanzas"
                             unitId={1}
                         />
                     </div>
@@ -152,4 +152,5 @@ const PaginaGuia = async () => {
     );
 };
 
-export default PaginaGuia;
+export default PaginaGuiaFinanzas;
+;

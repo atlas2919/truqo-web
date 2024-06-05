@@ -20,7 +20,7 @@ const LessonPage = async () => {
     ]);
 
     if(!lesson || !userProgress){
-        redirect("/learn");
+        redirect("/guia-agricultura");
     }
 
     const initialPercentage = lesson.challenges

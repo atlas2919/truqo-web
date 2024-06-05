@@ -7,9 +7,10 @@ import { Loader, User } from "lucide-react";
 
 type Props = {
     className?: string;
+    courseName?: string;
 };
 
-export const Sidebar = ({ className }: Props) => {
+export const Sidebar = ({ className, courseName }: Props) => {
     return (
         <div className={cn("flex h-full lg:w-[256px] lg:fixed left-0 top-0 px-4 pt-8 border-r-2 flex-col", className)}>
             <Link href="/">
@@ -26,7 +27,7 @@ export const Sidebar = ({ className }: Props) => {
                 />
                 <SidebarItem 
                     label="Contenido"
-                    href="/guia" 
+                    href={`/guia/${courseName}`}
                     iconSrc="/guia.svg"
                 />
                 <SidebarItem 

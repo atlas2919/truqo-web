@@ -26,7 +26,7 @@ export const UnitBannerGuide = ({
             </div>
 
             {unitId === 1 && (
-                <Link href="/contentUnit1">
+                <Link href="/agricultura/contentUnit1">
                     <Button
                         size="lg"
                         variant="secondaryUnit"
@@ -39,7 +39,7 @@ export const UnitBannerGuide = ({
             )}
 
             {unitId === 2 && (
-                <Link href="/contentUnit2">
+                <Link href="/agricultura/contentUnit2">
                     <Button
                         size="lg"
                         variant="secondaryUnit"
@@ -52,7 +52,7 @@ export const UnitBannerGuide = ({
             )}
 
             {unitId === 3 && (
-                <Link href="/contentUnit3">
+                <Link href="/agricultura/contentUnit3">
                     <Button
                         size="lg"
                         variant="secondaryUnit"
@@ -65,7 +65,7 @@ export const UnitBannerGuide = ({
             )}
 
             {unitId === 4 && (
-                <Link href="/contentUnit4">
+                <Link href="/agricultura/contentUnit4">
                     <Button
                         size="lg"
                         variant="secondaryUnit"

@@ -1,38 +1,30 @@
-import { Header } from "./header";
 import { FeedWrapper } from "@/components/feed-wrapper";
-import { StickyWrapper } from "@/components/sticky-wrapper";
-import { UserProgress } from "@/components/user-progress";
-import { getCourseProgress, getLessonPercentage, getUnits, getUserProgress, getUserSubscription } from "@/db/queries";
-import { redirect } from "next/navigation";
-import { Unit } from "./unit";
-import { get } from "http";
-import { lessons, units as unitsSchema } from "@/db/schema";
 import { Promo } from "@/components/promo";
 import { Quests } from "@/components/quests";
-import { FaCheckCircle } from "react-icons/fa";
-import { quests } from "@/constants";
-import Link from "next/link";
+import { StickyWrapper } from "@/components/sticky-wrapper";
 import { Progress } from "@/components/ui/progress";
+import { UserProgress } from "@/components/user-progress";
+import { quests } from "@/constants";
+import { getCourseProgress, getUserProgress, getUserSubscription } from "@/db/queries";
 import Image from "next/image";
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { FaCheckCircle } from "react-icons/fa";
+import { UnitBannerGuide } from "./unit-banner-agricultura";
+import { Button } from "@/components/ui/button";
+import { Header } from "./header-agricultura";
 
-const LearnPage = async () => {
+
+const PaginaGuiaAgricultura = async () => {
+
     const UserProgressData = getUserProgress();
-    const courseProgressData = getCourseProgress();
-    const lessonPercentageData = getLessonPercentage();
-    const unitsData = getUnits();
     const userSubscriptionData = getUserSubscription();
 
     const [
         userProgress,
-        units,
-        courseProgress,
-        lessonPercentage,
         userSubscription,
     ] = await Promise.all([
         UserProgressData,
-        unitsData,
-        courseProgressData,
-        lessonPercentageData,
         userSubscriptionData,
     ]);
 
@@ -40,17 +32,14 @@ const LearnPage = async () => {
         redirect("/courses");
     }
 
-    if(!courseProgress) {
+    if(!getCourseProgress) {
 
         redirect("/courses");
     }
 
     const isPro = !!userSubscription?.isActive;
- 
-    return(
-
-        <div className="flex flex-row-reverse gap-[48px] px-6">
-
+    return (
+        <div className="flex flex-row-reverse pag-[48px] px-6">
             <StickyWrapper>
                 <UserProgress
                     activeCourse={userProgress.activeCourse}
@@ -110,31 +99,57 @@ const LearnPage = async () => {
                     </ul>
                 </div>
             </StickyWrapper>
-
+            
             <FeedWrapper>
                 <Header title={userProgress.activeCourse.title} />
+                <div className="w-full flex flex-col items-center">
+                    <Image
+                        src="/guia.svg"
+                        alt="Guia"
+                        height={90}
+                        width={90}
+                    />
+                    <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
+                        Contenido
+                    </h1>
 
-                {units.map((unit) => (
-                    <div key={unit.id} className="mb-10">
-                        <Unit 
-                            id={unit.id}
-                            order={unit.order}
-                            description={unit.description}
-                            title={unit.title}
-                            lessons={unit.lessons}
-                            activeLesson={courseProgress.activeLesson as typeof lessons.$inferSelect & {
-                                unit: typeof unitsSchema.$inferSelect;
-                            } | undefined}
-                            activeLessonPercentage={lessonPercentage}
-                        /> 
+                    { /* banner verde de la unidad */ }
+                    <div className="w-full mb-6">
+                        <UnitBannerGuide 
+                            title="Unit 1" 
+                            description="Introduccion de agricultura sostenible"
+                            unitId={1}
+                        />
                     </div>
-                ))}
 
+                    <div className="w-full mb-6">
+                        <UnitBannerGuide 
+                            title="Unit 2" 
+                            description="Manejo integrado de plagas" 
+                            unitId={2}
+                        />
+                    </div>
+
+                    <div className="w-full mb-6">
+                        <UnitBannerGuide 
+                            title="Unit 3" 
+                            description="Conbservacion del suelo y el agua" 
+                            unitId={3}
+                        />
+                    </div>
+
+                    <div className="w-full mb-6">
+                        <UnitBannerGuide 
+                            title="Unit 4" 
+                            description="Agricultura organica" 
+                            unitId={4}
+                        />
+                    </div>
+                    
+                </div>
             </FeedWrapper>
-
         </div>
-
     );
 };
 
-export default LearnPage;
+export default PaginaGuiaAgricultura;

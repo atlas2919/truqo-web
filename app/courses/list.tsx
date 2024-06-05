@@ -16,20 +16,40 @@ export const List = ({ courses, activeCourseId }: Props) => {
     const router = useRouter();
     const [pending, startTransition] = useTransition();
 
-    const onClick = (id: number) => {
-        if(pending) return;
-        
-        if(id === activeCourseId) {
-            return router.push("/guia");
+    const onClick = (id: number, courseTitle: string) => {
+        if (pending) return;
+
+        const guideRoute = getGuideRoute(courseTitle);
+
+        if (id === activeCourseId) {
+            return router.push(guideRoute);
         }
 
+        // Actualizar el progreso del usuario en segundo plano
         startTransition(() => {
             upsertUserProgress(id)
-                .catch(() => toast.error("Something went wrong"));
+                .then(() => {
+                    router.push(guideRoute);
+                })
+                .catch(() => {
+                    toast.error("Something went wrong");
+                    router.push(guideRoute);
+                });
         });
     };
 
-    return(
+    const getGuideRoute = (courseTitle: string) => {
+        switch (courseTitle.toLowerCase()) {
+            case 'agricultura':
+                return '/guia/agricultura';
+            case 'finanzas':
+                return '/guia/finanzas';
+            default:
+                return '/guia';
+        }
+    };
+
+    return (
         <div className="pt-6 grid grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(210px,1fr))] gap-4">
             {courses.map((course) => (
                 <Card 
@@ -37,7 +57,7 @@ export const List = ({ courses, activeCourseId }: Props) => {
                     id={course.id}
                     title={course.title}
                     imageSrc={course.imageSrc}
-                    onClick={onClick}
+                    onClick={() => onClick(course.id, course.title)}
                     disabled={pending}
                     active={course.id === activeCourseId}
                 />
