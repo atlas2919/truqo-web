@@ -133,7 +133,7 @@ const PaginaGuiaAgricultura = async () => {
                     <div className="w-full mb-6">
                         <UnitBannerGuideAgricultura 
                             title="Unit 3" 
-                            description="Conbservacion del suelo y el agua" 
+                            description="Conservacion del suelo y el agua" 
                             unitId={3}
                         />
                     </div>
