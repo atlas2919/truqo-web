@@ -8,7 +8,7 @@ type Props = {
     unitId: number;
 };
 
-export const UnitBannerGuide = ({
+export const UnitBannerGuideFinanzas = ({
     title,
     description,
     unitId,
@@ -26,7 +26,7 @@ export const UnitBannerGuide = ({
             </div>
 
             {unitId === 1 && (
-                <Link href="/agricultura/contentUnit1">
+                <Link href="/finanzas/contentUnit1">
                     <Button
                         size="lg"
                         variant="secondaryUnit"
@@ -39,7 +39,7 @@ export const UnitBannerGuide = ({
             )}
 
             {unitId === 2 && (
-                <Link href="/agricultura/contentUnit2">
+                <Link href="/finanzas/contentUnit2">
                     <Button
                         size="lg"
                         variant="secondaryUnit"
@@ -52,7 +52,7 @@ export const UnitBannerGuide = ({
             )}
 
             {unitId === 3 && (
-                <Link href="/agricultura/contentUnit3">
+                <Link href="/finanzas/contentUnit3">
                     <Button
                         size="lg"
                         variant="secondaryUnit"
@@ -65,7 +65,7 @@ export const UnitBannerGuide = ({
             )}
 
             {unitId === 4 && (
-                <Link href="/agricultura/contentUnit4">
+                <Link href="/finanzas/contentUnit4">
                     <Button
                         size="lg"
                         variant="secondaryUnit"

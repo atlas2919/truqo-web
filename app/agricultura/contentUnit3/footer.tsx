@@ -12,7 +12,7 @@ export const FooterContent = () => {
                     size="lg"
                 >
                     
-                    <Link href="/guia">
+                    <Link href="/guia/agricultura">
                         Back
                     </Link>
                 </Button>

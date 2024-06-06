@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FaCheckCircle } from "react-icons/fa";
-import { UnitBannerGuide } from "./unit-banner-finanzas";
+import { UnitBannerGuideFinanzas } from "./unit-banner-finanzas";
 import { Button } from "@/components/ui/button";
 import { Header } from "./header-finanzas";
 
@@ -115,7 +115,7 @@ const PaginaGuiaFinanzas = async () => {
 
                     { /* banner verde de la unidad */ }
                     <div className="w-full mb-6">
-                        <UnitBannerGuide 
+                        <UnitBannerGuideFinanzas 
                             title="Unit 1" 
                             description="Finanzas"
                             unitId={1}
@@ -123,7 +123,7 @@ const PaginaGuiaFinanzas = async () => {
                     </div>
 
                     <div className="w-full mb-6">
-                        <UnitBannerGuide 
+                        <UnitBannerGuideFinanzas 
                             title="Unit 2" 
                             description="Manejo integrado de plagas" 
                             unitId={2}
@@ -131,7 +131,7 @@ const PaginaGuiaFinanzas = async () => {
                     </div>
 
                     <div className="w-full mb-6">
-                        <UnitBannerGuide 
+                        <UnitBannerGuideFinanzas 
                             title="Unit 3" 
                             description="Conbservacion del suelo y el agua" 
                             unitId={3}
@@ -139,7 +139,7 @@ const PaginaGuiaFinanzas = async () => {
                     </div>
 
                     <div className="w-full mb-6">
-                        <UnitBannerGuide 
+                        <UnitBannerGuideFinanzas 
                             title="Unit 4" 
                             description="Agricultura organica" 
                             unitId={4}

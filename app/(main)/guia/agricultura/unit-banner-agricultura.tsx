@@ -8,7 +8,7 @@ type Props = {
     unitId: number;
 };
 
-export const UnitBannerGuide = ({
+export const UnitBannerGuideAgricultura = ({
     title,
     description,
     unitId,
