@@ -5,10 +5,12 @@ export const FooterContent = () => {
     return (
         <footer className="hidden lg:block h-20 w-full border-t-2 border-slate-200 p-2">
             <div className="max-w-screen-lg mx-auto flex items-center justify-center h-full">
-                <Link href="/guia/agricultura" passHref>
-                    <Button as="a" variant="secondary" size="lg">
-                        Back
-                    </Button>
+                <Link href="/guia/agricultura" legacyBehavior>
+                    <a>
+                        <Button variant="secondary" size="lg">
+                            Back
+                        </Button>
+                    </a>
                 </Link>
             </div>
         </footer>
