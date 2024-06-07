@@ -18,7 +18,6 @@ export const Sidebarunit2AG = ({ className }: Props) => {
             </Link>
 
             <div className="flex flex-col gap-y-2 flex-1">
-                {/* New sidebar links for scrolling to sections */}
                 <SidebarItemContent
                     label="1.1  Introduction"
                     href="#introduction1" 

@@ -8,7 +8,7 @@ type Props = {
     className?: string;
 };
 
-export const Sidebarunit1AG = ({ className }: Props) => {
+export const Sidebarunit3AG = ({ className }: Props) => {
     return (
         <div className={cn("flex h-full lg:w-[256px] lg:fixed left-0 top-0 px-4 pt-8 border-r-2 flex-col", className)}>
             <Link href="/">

@@ -1,6 +1,6 @@
 
 import { Menu } from "lucide-react";
-import { Sidebarunit2AG } from "./sidebarunit2AG";
+import { Sidebarunit2FN } from "./sidebarunit2FN";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -16,7 +16,7 @@ export const MobileSidebarUnit2 = ({ courseName }: Props) => {
                 <Menu className="text-white"/>
             </SheetTrigger>
             <SheetContent className="p-0 z-[100]" side="left">
-                <Sidebarunit2AG />
+                <Sidebarunit2FN />
             </SheetContent>
         </Sheet>
 

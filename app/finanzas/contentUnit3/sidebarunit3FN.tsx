@@ -8,7 +8,7 @@ type Props = {
     className?: string;
 };
 
-export const Sidebarunit1AG = ({ className }: Props) => {
+export const Sidebarunit3FN = ({ className }: Props) => {
     return (
         <div className={cn("flex h-full lg:w-[256px] lg:fixed left-0 top-0 px-4 pt-8 border-r-2 flex-col", className)}>
             <Link href="/">
@@ -32,7 +32,7 @@ export const Sidebarunit1AG = ({ className }: Props) => {
             </div>
 
             <footer className="flex h-20 w-full border-t-2 border-slate-200 p-2 items-center justify-center">
-                <Link href="/guia/agricultura" legacyBehavior>
+                <Link href="/guia/finanzas" legacyBehavior>
                     <a>
                         <Button variant="secondary" size="lg">
                             Back
