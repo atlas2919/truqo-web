@@ -116,8 +116,8 @@ const PaginaGuiaFinanzas = async () => {
                     { /* banner verde de la unidad */ }
                     <div className="w-full mb-6">
                         <UnitBannerGuideFinanzas 
-                            title="Unit 1" 
-                            description="Finanzas"
+                            title="Gestión Financiera Agrícola" 
+                            description="frase"
                             unitId={1}
                         />
                     </div>
@@ -125,7 +125,7 @@ const PaginaGuiaFinanzas = async () => {
                     <div className="w-full mb-6">
                         <UnitBannerGuideFinanzas 
                             title="Unit 2" 
-                            description="Manejo integrado de plagas" 
+                            description="Gestión Financiera Agrícola" 
                             unitId={2}
                         />
                     </div>
