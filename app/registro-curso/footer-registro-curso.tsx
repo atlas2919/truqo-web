@@ -32,15 +32,6 @@ export const Footer = () => {
                         className="rounded-md"
                     />
                 </div>
-                <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px]">
-                    <Image 
-                        src="/paqtana.png" 
-                        alt="Paqtana" 
-                        layout="fill"
-                        objectFit="contain"
-                        className="rounded-md"
-                    />
-                </div>
             </div>
         </footer>
     );

@@ -60,6 +60,7 @@ export const Sidebar = ({ className, courseName }: Props) => {
                     <UserButton afterSignOutUrl="/" />
                 </ClerkLoaded>
             </div>
+            
         </div>
     );
 };

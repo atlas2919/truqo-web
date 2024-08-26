@@ -121,3 +121,10 @@ export const userSubscription = pgTable("user_subscription", {
     stripePriceId: text("stripe_price_id").notNull(),
     stripeCurrentPeriodEnd: timestamp("stripe_current_period_end").notNull(),
 });
+
+export const usersDni = pgTable("users_dni", {
+    id: serial("id").primaryKey(),
+    dni: text("dni").notNull().unique(),
+    firstName: text("first_name").notNull(),
+    lastName: text("last_name").notNull(),
+});

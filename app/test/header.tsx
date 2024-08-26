@@ -11,7 +11,7 @@ export const Header = () => {
         <header className="h-20 w-full borderr-b-2 border-slate-300 px-4">
             <div className="lg:max-w-screen-lg mx-auto flex items-center justify-between h-full">
                 <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
-                    <Link href="/">
+                    <Link href="/registro-curso">
                         <Image src="/mascot.svg" height={200} width={200} alt="Mascot" />
                     </Link>
                 </div>
